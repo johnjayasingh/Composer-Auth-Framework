@@ -1,0 +1,52 @@
+{
+    "app": {
+        "host": "localhost",
+        "port": "8080",
+        "restport": "3000",
+        "restauthpath": "/auth/jwt/callback",
+        "admin": "admin@loc-network",
+        "user_namespace": "org.gulf.lc",
+        "secret": "secret",
+        "tokenExpiry": 1440,
+        "mongoose_db": "mongodb://localhost/ComposerAuth"
+    },
+    "composer": {
+        "wallet": {
+            "type": "@ampretia/composer-wallet-redis",
+            "desc": "Uses a local redis instance",
+            "options": {
+                "host": "0.0.0.0"
+            }
+        }
+    },
+    "hyperledger": {
+        "composerRestServerUrl": "52.23.110.78",
+        "composerRestServerPort": 3000,
+        "composerRestServerAuthCallback": "/auth/jwt/callback",
+        "jwtSecret": "secret",
+        "cardName": "admin@car-auction",
+        "network": "car-auction",
+        "connectionProfile": {
+            "name": "hlfv1",
+            "type": "hlfv1",
+            "orderers": [
+                {
+                    "url": "grpc://localhost:7050"
+                }
+            ],
+            "ca": {
+                "url": "http://localhost:7054",
+                "name": "ca.org1.example.com"
+            },
+            "peers": [
+                {
+                    "requestURL": "grpc://localhost:7051",
+                    "eventURL": "grpc://localhost:7053"
+                }
+            ],
+            "channel": "composerchannel",
+            "mspID": "Org1MSP",
+            "timeout": 300
+        }
+    }
+}

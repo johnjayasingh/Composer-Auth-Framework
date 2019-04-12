@@ -1,0 +1,55 @@
+    COMPOSER_CARD=restadmin@loc-network
+    COMPOSER_NAMESPACES=never
+    COMPOSER_AUTHENTICATION=true
+    COMPOSER_MULTIUSER=true
+    NODE_CONFIG='{
+        "composer":{
+            "wallet":{
+                "type":"@ampretia/composer-wallet-redis",
+                "desc":"Uses  a local redis instance",
+                "options":{ 
+                    "host":"192.168.1.103"
+                }
+            }
+        }
+    }'
+    COMPOSER_PROVIDERS='{
+        "google": {
+                "provider": "google",
+                "module": "passport-google-oauth2",
+                "clientID": "312039026929-t6i81ijh35ti35jdinhcodl80e87htni.apps.googleusercontent.com",
+                "clientSecret": "Q4i_CqpqChCzbE-u3Wsd_tF0",
+                "authPath": "/auth/google",
+                "callbackURL": "/auth/google/callback",
+                "scope": "https://www.googleapis.com/auth/plus.login",
+                "successRedirect": "http://localhost:4200?loggedIn=true",
+                "failureRedirect": "/"
+        },
+        "github": {
+                "provider": "github",
+                "module": "passport-github",
+                "clientID": "2d74910237e2151313dd",
+                "clientSecret": "8b347162cf156290ae168bd59adf5e25fcfb1d61",
+                "authPath": "/auth/github",
+                "callbackURL": "/auth/github/callback",
+                "successRedirect": "http://localhost:4200?loggedIn=true",
+                "failureRedirect": "/"
+        },
+        "jwt": {
+                "provider": "jwt",
+                "module": "passport-empty",
+                "secretOrKey": "secret",
+                "authPath": "/auth/jwt",
+                "authScheme": "saml",
+                "callbackURL": "/auth/jwt/callback",
+                "successRedirect": "http://localhost:4200?loggedIn=true",
+                "failureRedirect": "/"
+        }
+    }'
+    COMPOSER_DATASOURCES='{
+        "db": {
+            "name": "db",
+            "connector": "mongodb",
+            "host": "mongo"
+        }
+    }'

@@ -1,0 +1,35 @@
+{
+  "name": "composer-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ampretia/composer-wallet-redis": "^0.1.1",
+    "body-parser": "^1.18.2",
+    "composer-admin": "^0.19.1",
+    "composer-client": "^0.19.1",
+    "composer-common": "^0.19.1",
+    "config": "^1.30.0",
+    "cookie": "^0.3.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "hat": "0.0.3",
+    "http-proxy": "^1.16.2",
+    "jsonwebtoken": "^8.2.1",
+    "mongoose": "^5.0.15",
+    "morgan": "^1.9.0",
+    "passport-jwt": "^4.0.0",
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1"
+  }
+}
